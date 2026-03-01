@@ -1,6 +1,6 @@
 import std/[os, tables, strutils]
 
-import editor_config/[types, parser, glob]
+import editorconfig/[types, parser, glob]
 
 proc prepareSections(ec: var EditorConfigFile) =
   ## Pre-compile glob patterns for all sections in an EditorConfig file.
