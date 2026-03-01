@@ -1,6 +1,6 @@
 import std/[unittest, strutils]
 
-import ../editor_config/[types, glob]
+import ../editorconfig/[types, glob]
 
 suite "globToRegexStr":
   test "simple star":

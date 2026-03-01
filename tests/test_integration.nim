@@ -1,6 +1,6 @@
 import std/[unittest, os, tables]
 
-import ../editor_config
+import ../editorconfig
 
 suite "getProperties integration":
   var tmpDir: string

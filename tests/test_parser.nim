@@ -1,6 +1,6 @@
 import std/[unittest, os, tables]
 
-import ../editor_config/[types, parser]
+import ../editorconfig/[types, parser]
 
 suite "parseEditorConfig":
   var tmpDir: string
