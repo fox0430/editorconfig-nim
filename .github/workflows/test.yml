@@ -65,6 +65,9 @@ jobs:
       - name: Run tests
         run: nimble test -y
 
+      - name: Install editorconfig-nim
+        run: nimble install
+
       - name: Run examples
         run: |
           nim c -r examples/basic.nim
