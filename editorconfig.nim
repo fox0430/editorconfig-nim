@@ -26,7 +26,7 @@ proc getProperties*(filePath: string): Table[string, string] =
   var dir = parentDir(absPath)
   var prevDir = ""
 
-  while dir != prevDir: # Stop at filesystem root (dir stops changing)
+  while dir != prevDir and dir.len > 0: # Stop at filesystem root
     let ecPath = dir / ".editorconfig"
     if fileExists(ecPath):
       var ec = parseEditorConfig(ecPath)

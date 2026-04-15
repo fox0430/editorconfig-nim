@@ -281,3 +281,10 @@ indent_style = tab
 
     let props = getProperties(tmpDir / dirName / "main.nim")
     check props["indent_style"] == "tab"
+
+  test "nonexistent path does not pick up CWD editorconfig":
+    # Regression: parentDir("/") returns "" in Nim, and "" / ".editorconfig"
+    # resolves to CWD-relative ".editorconfig". Ensure that a path with no
+    # .editorconfig files in its ancestors returns empty properties.
+    let props = getProperties("/tmp/nonexistent_dir_12345/test.nim")
+    check props.len == 0
